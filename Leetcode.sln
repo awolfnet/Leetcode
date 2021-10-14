@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "island-perimeter", "island-perimeter\island-perimeter.csproj", "{3E2EF5A7-3C11-4B3F-9A5D-7A7DFA29CA5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E2EF5A7-3C11-4B3F-9A5D-7A7DFA29CA5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2EF5A7-3C11-4B3F-9A5D-7A7DFA29CA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2EF5A7-3C11-4B3F-9A5D-7A7DFA29CA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2EF5A7-3C11-4B3F-9A5D-7A7DFA29CA5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C17F7820-687D-43CE-B3C7-94D8F59DA3E9}
+	EndGlobalSection
+EndGlobal

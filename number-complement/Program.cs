@@ -10,47 +10,46 @@ namespace number_complement
     {
         static void Main(string[] args)
         {
-            int num = 5;
+            int num = 12;
             Console.WriteLine(FindComplement(num));
             Console.ReadKey();
         }
 
         static int FindComplement(int num)
         {
-            byte[] bin = Dec2Bin(num);
+            List<bool> bin = Dec2Bin(num);
 
-            List<byte> list = new List<byte>();
-            foreach (byte b in bin)
+            List<bool> target = new List<bool>();
+            foreach (bool b in bin)
             {
-                list.Add((byte)(b ^ 1));
+                target.Add(!b);
             }
 
-            byte[] target = list.ToArray();
             int r = Bin2Dec(target);
             return r;
         }
-        static byte[] Dec2Bin(int num)
+        static List<bool> Dec2Bin(int num)
         {
-            List<byte> list = new List<byte>();
+            List<bool> list = new List<bool>();
             int mod = 0;
             while (num >= 1)
             {
                 mod = num % 2;
                 num = num / 2;
-                list.Add(Convert.ToByte(mod));
+                list.Add(Convert.ToBoolean(mod));
             }
             list.Reverse();
-            return list.ToArray();
+            return list;
         }
 
-        static int Bin2Dec(byte[] num)
+        static int Bin2Dec(List<bool> num)
         {
-            int power = num.Length;
+            int power = num.Count;
             int r = 0;
-            foreach(byte b in num)
+            foreach(bool b in num)
             {
                 power--;
-                r += b * (int)Math.Pow(2, power);
+                r += Convert.ToInt32(b) * (int)Math.Pow(2, power);
             }
             return r;
         }

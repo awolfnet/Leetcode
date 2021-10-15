@@ -17,8 +17,14 @@ namespace sum_of_even_numbers_after_queries
             queries[2] = new int[] { -4, 0 };
             queries[3] = new int[] { 2, 3 };
 
+            System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+            stopwatch.Start();
+
             int[] result = SumEvenAfterQueries(nums, queries);
-            foreach(int v in result)
+
+            stopwatch.Stop();
+
+            foreach (int v in result)
             {
                 Console.WriteLine(v);
             }
@@ -27,15 +33,41 @@ namespace sum_of_even_numbers_after_queries
 
         static int[] SumEvenAfterQueries(int[] nums, int[][] queries)
         {
+            int sumeven = SumEvenArray(nums);
+
             List<int> list = new List<int>();
-            foreach(int[] query in queries)
+            foreach (int[] query in queries)
             {
                 int index = query[1];
                 int value = query[0];
-
+                int oldnum = nums[index];
                 nums[index] += value;
 
-                list.Add(SumEvenArray(nums));
+                if (IsEven(oldnum))
+                {
+                    if (IsEven(value))
+                    {
+                        sumeven += value;
+                    }
+                    else
+                    {
+                        sumeven -= oldnum;
+                    }
+                }
+                else
+                {
+                    if (IsEven(value) == false)
+                    {
+                        sumeven += nums[index];
+                    }
+                    else
+                    {
+
+                    }
+
+                }
+
+                list.Add(sumeven);
             }
             return list.ToArray();
         }
@@ -43,14 +75,26 @@ namespace sum_of_even_numbers_after_queries
         static int SumEvenArray(int[] nums)
         {
             int sum = 0;
-            foreach(int v in nums)
+            foreach (int v in nums)
             {
-                if(v%2==0)
+                if (v % 2 == 0)
                 {
                     sum += v;
                 }
             }
             return sum;
+        }
+
+        static bool IsEven(int num)
+        {
+            if (num % 2 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

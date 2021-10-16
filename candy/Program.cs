@@ -10,7 +10,7 @@ namespace candy
     {
         static void Main(string[] args)
         {
-            int[] ratings = new int[] { 1, 2, 2 };
+            int[] ratings = new int[] { 1, 2, 87, 87, 87, 2, 1 };
 
             Console.WriteLine(Candy(ratings));
             Console.ReadKey();
@@ -20,6 +20,8 @@ namespace candy
         {
             int minimum = ratings.Length;
             int lastCandy = 1;
+
+            bool Added = false;
 
             if (ratings[0] > ratings[1])
             {
@@ -37,16 +39,37 @@ namespace candy
                 {
                     minimum += lastCandy;
                     lastCandy++;
+                    Added = true;
                 }
-                else
+                else if (c < prev)
+                {
+                    lastCandy++;
+                    Added = false;
+                }
+                else if (c == prev)
                 {
                     lastCandy = 1;
                 }
 
-                //1,2,5,8,9,6,3
-                //1,2,3,4,5,1,2
+                //[1,2,87,87,87,2,1]
+                // 1,2,3 ,1 ,3 ,2,1
 
+                //9,8,7,7,6,5,5,4,3,2,1
+                //1,1,1,1,1,1,1,1,1,1,1 =11
+                //3,2,1,3,2,1,5,4,3,2,1
+
+                //1,2,3,4,5,4,3,2,1
+                //1,2,3,4,5,
+
+                //1,2,3,4,5,5,4,3,2,1
+                //1,2,3,4,5,
             }
+
+            if(Added==false)
+            {
+                minimum += lastCandy;
+            }
+
             return minimum;
         }
     }

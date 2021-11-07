@@ -11,6 +11,7 @@ namespace thousand_separator
         static void Main(string[] args)
         {
             Console.WriteLine(ThousandSeparator(1234567890));
+            Console.ReadKey();
         }
 
         static string ThousandSeparator(int n)

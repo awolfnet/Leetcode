@@ -10,24 +10,29 @@ namespace candy
     {
         static void Main(string[] args)
         {
-            int[] ratings = new int[] { 1, 2, 87, 87, 87, 2, 1 };
+            int[] ratings1 = new int[] { 1,0,2 };
+            int[] ratings2 = new int[] { 1,2,2 };
+            int[] ratings3 = new int[] { 1, 2, 87, 87, 87, 2, 1 };
+            int[] ratings4 = new int[] { 1, 3, 2, 2, 1 };
 
-            Console.WriteLine(Candy(ratings));
+            int[] ratings99 = new int[] { 9, 8, 7, 7, 6, 5, 5, 4, 3, 2, 1 };
+
+            Console.WriteLine($"5:{Candy(ratings1)}");
+            Console.WriteLine($"4:{Candy(ratings2)}");
+            Console.WriteLine($"13:{Candy(ratings3)}");
+            Console.WriteLine($"7:{Candy(ratings4)}");
+            Console.WriteLine($"27:{Candy(ratings99)}");
+
             Console.ReadKey();
         }
 
         static int Candy(int[] ratings)
         {
-            int minimum = ratings.Length;
-            int lastCandy = 1;
-
-            bool Added = false;
-
-            if (ratings[0] > ratings[1])
-            {
-                minimum++;
-                lastCandy++;
-            }
+            int minimum = 1;
+            int candy = 1;
+            bool up = false;
+            bool down = false;
+            Console.Write("1,");
 
             for (int i = 1; i < ratings.Length; i++)
             {
@@ -37,19 +42,35 @@ namespace candy
 
                 if (c > prev)
                 {
-                    minimum += lastCandy;
-                    lastCandy++;
-                    Added = true;
+                    if(down)
+                    {
+                        candy = 1;
+                        down = false;
+                    }
+                    candy++;
+                    up = true;
                 }
                 else if (c < prev)
                 {
-                    lastCandy++;
-                    Added = false;
+                    if(up)
+                    {
+                        candy = 1;
+                        up = false;
+                    }
+                    candy++;
+                    down = true;
                 }
                 else if (c == prev)
                 {
-                    lastCandy = 1;
+                    candy = 1;
                 }
+                minimum += candy;
+
+                Console.Write($"{candy},");
+
+                //[1,3,2,2,1]
+                // 1,2,1,2,1
+                // 1,2,1,1,2
 
                 //[1,2,87,87,87,2,1]
                 // 1,2,3 ,1 ,3 ,2,1
@@ -63,13 +84,14 @@ namespace candy
 
                 //1,2,3,4,5,5,4,3,2,1
                 //1,2,3,4,5,
-            }
 
-            if(Added==false)
-            {
-                minimum += lastCandy;
-            }
+                //1,2,3,4,3,2,1,2,3,4
+                //
 
+                //1,2,3,1,2,3
+                
+            }
+            Console.WriteLine();
             return minimum;
         }
     }

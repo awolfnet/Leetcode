@@ -10,7 +10,7 @@ namespace thousand_separator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(ThousandSeparator(1234567890));
+            Console.WriteLine(ThousandSeparator(1234567));
             Console.ReadKey();
         }
 
@@ -29,17 +29,16 @@ namespace thousand_separator
 
             input = n.ToString().PadLeft(l, ' ');
 
-            StringBuilder sb = new StringBuilder();
+            string result = string.Empty;
 
             for (int i = 0; i < l; i += 3)
             {
-                sb.Append(input.Substring(i, 3));
-                sb.Append(".");
+                result+=(input.Substring(i, 3));
+                result+=(".");
             }
-            sb.Remove(sb.Length - 1, 1);
 
-            string result = sb.ToString().Trim();
-            return result;
+            result = result.Trim();
+            return result.Substring(0,result.Length-1);
         }
     }
 }

@@ -24,36 +24,22 @@ namespace thousand_separator
                 return input;
             }
 
+            int j = l % 3;
+            l = j > 0 ? l + 3 - j : l + j;
+
+            input = n.ToString().PadLeft(l, ' ');
+
             StringBuilder sb = new StringBuilder();
 
-            int j = 3 - l % 3;
-
-            if(j==3)
-            {
-                j = 0;
-            }else
-            {
-                for (int i = 0; i < j; i++)
-                {
-                    sb.Append("0");
-                }
-            }
-
-            sb.Append(input);
-
-            input = sb.ToString();
-            sb.Clear();
-
-            for (int i = 0; i < l + j; i += 3)
+            for (int i = 0; i < l; i += 3)
             {
                 sb.Append(input.Substring(i, 3));
                 sb.Append(".");
             }
             sb.Remove(sb.Length - 1, 1);
 
-
-            string result = sb.ToString();
-            return result.Substring(j);
+            string result = sb.ToString().Trim();
+            return result;
         }
     }
 }

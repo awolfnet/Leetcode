@@ -22,18 +22,16 @@ namespace minimize_maximum_pair_sum_in_array
             int l = nums.Length;
             int c = l / 2;
 
-            List<int> result = new List<int>();
+            int result = 0;
 
             for (int i = 0; i < c; i++)
             {
                 int r = nums[i] + nums[l-1 - i];
-                result.Add(r);
+                result = Math.Max(result, r);
             }
-
-            result.Sort();
             
 
-            return result[result.Count-1];
+            return result;
         }
     }
 }

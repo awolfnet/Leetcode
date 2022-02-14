@@ -10,7 +10,7 @@ namespace maximum_product_subarray
     {
         static void Main(string[] args)
         {
-            int[] nums = { -2 };
+            int[] nums = { 0,2 };
             Console.WriteLine(MaxProduct(nums));
             Console.ReadKey();
         }
@@ -19,20 +19,20 @@ namespace maximum_product_subarray
         {
             int l = nums.Length;
 
-            int result = 0;
+            int result = -11;
 
             for (int i = 0; i < l; i++)
             {
                 int r = nums[i];
-                for(int j=i+1;j<l;j++)
+                for (int j = i; j < l; j++)
                 {
-                    r *= nums[j];
+                    if (j != i)
+                    {
+                        r *= nums[j];
+                    }
                     result = Math.Max(result, r);
                 }
-                
             }
-
-
             return result;
         }
     }

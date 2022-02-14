@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "longest-subarray-of-1s-afte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minimize-maximum-pair-sum-in-array", "minimize-maximum-pair-sum-in-array\minimize-maximum-pair-sum-in-array.csproj", "{96EC0DE9-72DB-4C10-88B6-E1ED305F4E50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maximum-product-subarray", "maximum-product-subarray\maximum-product-subarray.csproj", "{C8799301-E976-42BE-AC67-E999AC4DA157}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{96EC0DE9-72DB-4C10-88B6-E1ED305F4E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96EC0DE9-72DB-4C10-88B6-E1ED305F4E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96EC0DE9-72DB-4C10-88B6-E1ED305F4E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8799301-E976-42BE-AC67-E999AC4DA157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8799301-E976-42BE-AC67-E999AC4DA157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8799301-E976-42BE-AC67-E999AC4DA157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8799301-E976-42BE-AC67-E999AC4DA157}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

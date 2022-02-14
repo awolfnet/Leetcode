@@ -10,7 +10,7 @@ namespace minimize_maximum_pair_sum_in_array
     {
         static void Main(string[] args)
         {
-            int[] nums = {3,5,4,2,4,6 };
+            int[] nums = { 3, 5,  2,3 };
             Console.WriteLine(MinPairSum(nums));
             Console.ReadKey();
         }
@@ -19,12 +19,21 @@ namespace minimize_maximum_pair_sum_in_array
         {
             Array.Sort(nums);
 
-            for (int i = 0; i < nums.Length; i++)
-            {
+            int l = nums.Length;
+            int c = l / 2;
 
+            List<int> result = new List<int>();
+
+            for (int i = 0; i < c; i++)
+            {
+                int r = nums[i] + nums[l-1 - i];
+                result.Add(r);
             }
 
-            return 0;
+            result.Sort();
+            
+
+            return result[result.Count-1];
         }
     }
 }

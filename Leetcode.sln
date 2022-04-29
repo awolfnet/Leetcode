@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minimize-maximum-pair-sum-i
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maximum-product-subarray", "maximum-product-subarray\maximum-product-subarray.csproj", "{C8799301-E976-42BE-AC67-E999AC4DA157}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "longest-palindromic-substring", "longest-palindromic-substring\longest-palindromic-substring.csproj", "{A094A2A3-07B3-41A4-9D37-302239AF4F51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{C8799301-E976-42BE-AC67-E999AC4DA157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8799301-E976-42BE-AC67-E999AC4DA157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8799301-E976-42BE-AC67-E999AC4DA157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A094A2A3-07B3-41A4-9D37-302239AF4F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A094A2A3-07B3-41A4-9D37-302239AF4F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A094A2A3-07B3-41A4-9D37-302239AF4F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A094A2A3-07B3-41A4-9D37-302239AF4F51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

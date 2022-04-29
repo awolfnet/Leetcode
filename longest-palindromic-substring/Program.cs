@@ -13,6 +13,7 @@ namespace longest_palindromic_substring
             string s = "babad";
 
             string result = LongestPalindrome(s);
+            Console.WriteLine(result);
 
             Console.ReadKey();
         }
@@ -20,18 +21,25 @@ namespace longest_palindromic_substring
         public static string LongestPalindrome(string s)
         {
             int l = s.Length;
+            int longest = 0;
 
-            StringBuilder sb = new StringBuilder();
+            string result = string.Empty;
 
             for (int i = 0; i < l; i++)
             {
-                for (int j = 0; j < l - i+1; j++)
+                for (int j = 0; j < l - i + 1; j++)
                 {
-                    Console.WriteLine(s.Substring(i, j));
+                    string word = s.Substring(i, j);
+                    int lng = IsPalindrome(word);
+                    if (lng > longest)
+                    {
+                        longest = lng;
+                        result = word;
+                    }
                 }
             }
 
-            return sb.ToString();
+            return result;
         }
 
         /// <summary>
@@ -41,8 +49,39 @@ namespace longest_palindromic_substring
         /// <returns></returns>
         public static int IsPalindrome(string s)
         {
+            int l = s.Length;
+            if (l <= 1)
+            {
+                return 0;
+            }
 
-            return 2;
+            int m = l / 2;
+            int n = l % 2;
+
+            string wordleft = string.Empty;
+            string wordright = string.Empty;
+
+            if (n == 0)
+            {
+                wordleft = s.Substring(0, m);
+                wordright = s.Substring(m, l - m);
+            }
+            else
+            {
+                wordleft = s.Substring(0, m);
+                wordright = s.Substring(m + 1, l - m - 1);
+            }
+
+            string wordrightReversed = new string(wordright.Reverse().ToArray());
+            
+            if(wordleft.Equals(wordrightReversed))
+            {
+                //Console.WriteLine(s);
+                return l;
+            }else
+            {
+                return 0;
+            }
         }
     }
 }

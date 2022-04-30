@@ -10,12 +10,12 @@ namespace longest_palindromic_substring
     {
         static void Main(string[] args)
         {
-            string s = "babad";
+            string s = "babadbbabaabababbaababa";
             string s1 = "a";
             string s2 = "aa";
             string s3 = "rgczcpratwyqxaszbuwwcadruayhasynuxnakpmsyhxzlnxmdtsqqlmwnbxvmgvllafrpmlfuqpbhjddmhmbcgmlyeypkfpreddyencsdmgxysctpubvgeedhurvizgqxclhpfrvxggrowaynrtuwvvvwnqlowdihtrdzjffrgoeqivnprdnpvfjuhycpfydjcpfcnkpyujljiesmuxhtizzvwhvpqylvcirwqsmpptyhcqybstsfgjadicwzycswwmpluvzqdvnhkcofptqrzgjqtbvbdxylrylinspncrkxclykccbwridpqckstxdjawvziucrswpsfmisqiozworibeycuarcidbljslwbalcemgymnsxfziattdylrulwrybzztoxhevsdnvvljfzzrgcmagshucoalfiuapgzpqgjjgqsmcvtdsvehewrvtkeqwgmatqdpwlayjcxcavjmgpdyklrjcqvxjqbjucfubgmgpkfdxznkhcejscymuildfnuxwmuklntnyycdcscioimenaeohgpbcpogyifcsatfxeslstkjclauqmywacizyapxlgtcchlxkvygzeucwalhvhbwkvbceqajstxzzppcxoanhyfkgwaelsfdeeviqogjpresnoacegfeejyychabkhszcokdxpaqrprwfdahjqkfptwpeykgumyemgkccynxuvbdpjlrbgqtcqulxodurugofuwzudnhgxdrbbxtrvdnlodyhsifvyspejenpdckevzqrexplpcqtwtxlimfrsjumiygqeemhihcxyngsemcolrnlyhqlbqbcestadoxtrdvcgucntjnfavylip";
 
-            string result = LongestPalindrome(s3);
+            string result = LongestPalindrome(s);
             Console.WriteLine(result);
 
             Console.ReadKey();
@@ -30,15 +30,35 @@ namespace longest_palindromic_substring
 
             for (int i = 0; i < l; i++)
             {
-                for (int j = 0; j < l - i + 1; j++)
+                for (int j = longest; j < l - i + 1; j++)
                 {
                     string word = s.Substring(i, j);
-                    int lng = IsPalindrome(word);
-                    if (lng > longest)
+                    Console.WriteLine($"Word: {word}");
+
+                    if(j<=1)
                     {
-                        longest = lng;
+                        longest = j;
+                        result = word;
+                        continue;
+                    }
+
+                    int m = j / 2;
+                    int n = j % 2;
+
+                    string wordleft = word.Substring(0, m);
+                    string wordright = string.Empty;
+
+                    for (int idx = j - 1; idx >= m + n; idx--)
+                    {
+                        wordright += word.Substring(idx, 1);
+                    }
+
+                    if (wordleft.Equals(wordright))
+                    {
+                        longest = j;
                         result = word;
                     }
+                    
                 }
             }
 
@@ -61,27 +81,20 @@ namespace longest_palindromic_substring
             int m = l / 2;
             int n = l % 2;
 
-            string wordleft = string.Empty;
+            string wordleft = s.Substring(0, m);
             string wordright = string.Empty;
 
-            if (n == 0)
+            for (int i = l - 1; i >= m + n; i--)
             {
-                wordleft = s.Substring(0, m);
-                wordright = s.Substring(m, l - m);
-            }
-            else
-            {
-                wordleft = s.Substring(0, m);
-                wordright = s.Substring(m + 1, l - m - 1);
+                wordright += s.Substring(i, 1);
             }
 
-            string wordrightReversed = new string(wordright.Reverse().ToArray());
-            
-            if(wordleft.Equals(wordrightReversed))
+            if (wordleft.Equals(wordright))
             {
                 //Console.WriteLine(s);
                 return l;
-            }else
+            }
+            else
             {
                 return 0;
             }

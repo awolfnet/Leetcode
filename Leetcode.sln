@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "longest-palindromic-substri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circle-and-rectangle-overlapping", "circle-and-rectangle-overlapping\circle-and-rectangle-overlapping.csproj", "{96FFBFA7-1062-4C43-B365-8C47FBF1237B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "push-dominoes", "push-dominoes\push-dominoes.csproj", "{48C2CD61-97EE-4445-B3F7-253AE4C167AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{96FFBFA7-1062-4C43-B365-8C47FBF1237B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96FFBFA7-1062-4C43-B365-8C47FBF1237B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96FFBFA7-1062-4C43-B365-8C47FBF1237B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48C2CD61-97EE-4445-B3F7-253AE4C167AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48C2CD61-97EE-4445-B3F7-253AE4C167AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48C2CD61-97EE-4445-B3F7-253AE4C167AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48C2CD61-97EE-4445-B3F7-253AE4C167AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

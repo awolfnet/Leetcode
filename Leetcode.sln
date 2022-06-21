@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circle-and-rectangle-overla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "push-dominoes", "push-dominoes\push-dominoes.csproj", "{48C2CD61-97EE-4445-B3F7-253AE4C167AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "divide-array-in-sets-of-k-consecutive-numbers", "divide-array-in-sets-of-k-consecutive-numbers\divide-array-in-sets-of-k-consecutive-numbers.csproj", "{0661B675-B77B-4CC8-83F3-282A2DDF964A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{48C2CD61-97EE-4445-B3F7-253AE4C167AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48C2CD61-97EE-4445-B3F7-253AE4C167AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48C2CD61-97EE-4445-B3F7-253AE4C167AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0661B675-B77B-4CC8-83F3-282A2DDF964A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0661B675-B77B-4CC8-83F3-282A2DDF964A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0661B675-B77B-4CC8-83F3-282A2DDF964A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0661B675-B77B-4CC8-83F3-282A2DDF964A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

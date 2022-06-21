@@ -10,7 +10,7 @@ namespace divide_array_in_sets_of_k_consecutive_numbers
     {
         static void Main(string[] args)
         {
-            int[] nums = { 3, 15,2, 1, 2, 3, 17, 4, 3, 4, 16, 5, 9, 10, 11 };
+            int[] nums = { 3, 15, 2, 1, 2, 3, 17, 4, 3, 4, 16, 5, 9, 10, 11 };
             int[] sorted = { 1, 2, 2, 3, 3, 3, 4, 4, 5, 9, 10, 11 };
 
             int k = 3;
@@ -23,44 +23,27 @@ namespace divide_array_in_sets_of_k_consecutive_numbers
         {
             List<int> list = nums.ToList();
             list.Sort();
-            foreach (int i in list)
-            {
-                Console.Write($"{i},");
-            }
-            Console.WriteLine();
 
-            int length = nums.Length;
-
-            int m = length % k;
-
-            if (m != 0)
+            if (nums.Length % k != 0)
             {
                 return false;
             }
 
-            int r = length / k;
+            int r = nums.Length / k;
 
             for (int b = 0; b < r; b++)
             {
-                int n = 0;
+                int n = list.First();
                 int l = 0;
                 for (int i = 0; i < k; i++)
                 {
-
-                    if (i == 0)
-                    {
-                        n = list.First();
-                    }
                     l = n + i;
-                    bool x = list.Remove(l);
-                    Console.Write($"{l},");
-                    if (x == false)
+                    if (!list.Remove(l))
                     {
                         return false;
                     }
                 }
 
-                Console.WriteLine();
             }
 
             if (list.Count > 0)

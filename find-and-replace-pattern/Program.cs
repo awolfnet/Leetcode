@@ -10,8 +10,8 @@ namespace find_and_replace_pattern
     {
         static void Main(string[] args)
         {
-            string[] words = { "abc", "deq", "mee", "aqq", "dkd", "ccc" };
-            string pattern = "abb";
+            string[] words = { "abc", "deq", "mee", "aqq", "dkd", "ccc", "abc", "cba", "xyx", "yxx", "yyx" };
+            string pattern = "abc";
 
             IList<string> result = FindAndReplacePattern(words, pattern);
 
@@ -44,7 +44,7 @@ namespace find_and_replace_pattern
 
             for (int j = 0; j < p.Length - 1; j++)
             {
-                v[j] = (p[j + 1] - p[j]) == 0 ? 0 : 1;
+                v[j] = Math.Abs(p[j + 1] - p[j]) == 0 ? 0 : 1;
             }
 
 
@@ -54,7 +54,7 @@ namespace find_and_replace_pattern
                 bool match = true;
                 for (int j = 0; j < wd.Length - 1; j++)
                 {
-                    int r = (wd[j + 1] - wd[j]) == 0 ? 0 : 1;
+                    int r = Math.Abs(wd[j + 1] - wd[j]) == 0 ? 0 : 1;
                     if (r != v[j])
                     {
                         match &= false;
@@ -73,10 +73,22 @@ namespace find_and_replace_pattern
                 }
 
             }
-
-
-
             return result;
+        }
+        static int[] Difference(string word)
+        {
+            char[] p = word.ToCharArray();
+            int length = p.Length;
+            int[] d = new int[length - 1];
+
+            for (int j = 0; j < length - 1; j++)
+            {
+                d[j] = Math.Abs(p[j + 1] - p[j]) == 0 ? 0 : 1;
+            }
+
+
+
+            return d;
         }
     }
 }

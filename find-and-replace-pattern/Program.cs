@@ -9,7 +9,7 @@ namespace find_and_replace_pattern
     class Program
     {
         static void Main(string[] args)
-        {
+        {   
             string[] words = { "abc", "deq", "mee", "aqq", "dkd", "ccc", "abc", "cba", "xyx", "yxx", "yyx" };
             string pattern = "abc";
 
